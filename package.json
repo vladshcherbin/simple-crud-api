@@ -1,11 +1,14 @@
 {
   "name": "simple-crud-api",
   "scripts": {
-    "lint": "eslint src"
+    "dev": "nodemon -w src",
+    "lint": "eslint src",
+    "start": "node --experimental-specifier-resolution node src"
   },
   "devDependencies": {
     "@shcherbin/eslint-config": "^0.2.0",
-    "eslint": "^8.3.0"
+    "eslint": "^8.3.0",
+    "nodemon": "^2.0.15"
   },
   "private": true
 }
