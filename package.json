@@ -1,4 +1,11 @@
 {
   "name": "simple-crud-api",
+  "scripts": {
+    "lint": "eslint src"
+  },
+  "devDependencies": {
+    "@shcherbin/eslint-config": "^0.2.0",
+    "eslint": "^8.3.0"
+  },
   "private": true
 }
