@@ -5,6 +5,9 @@
     "lint": "eslint src",
     "start": "node --experimental-specifier-resolution node src"
   },
+  "dependencies": {
+    "dotenv": "^10.0.0"
+  },
   "devDependencies": {
     "@shcherbin/eslint-config": "^0.2.0",
     "eslint": "^8.3.0",
