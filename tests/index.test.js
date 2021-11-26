@@ -26,10 +26,14 @@ jest.unstable_mockModule('../src/data/persons', () => ({
 
 const { default: server } = await import('../src/server')
 
-test('Return persons list', async () => {
-  const response = await request(server).get('/')
+describe('Routes', () => {
+  describe('/person', () => {
+    test('Return persons list', async () => {
+      const response = await request(server.instance()).get('/person')
 
-  expect(response.status).toBe(200)
-  expect(response.type).toBe('application/json')
-  expect(response.body).toMatchSnapshot()
+      expect(response.status).toBe(200)
+      expect(response.type).toBe('application/json')
+      expect(response.body).toMatchSnapshot()
+    })
+  })
 })
