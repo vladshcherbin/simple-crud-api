@@ -11,7 +11,7 @@ function generateAge() {
 }
 
 function generateHobbies() {
-  const hobbies = ['tennis', 'games', 'singing', 'dancing', 'hiking']
+  const hobbies = ['tennis', 'console gaming', 'singing', 'dancing', 'hiking']
 
   return Array.from({ length: randomInt(3) }, () => (
     hobbies[randomInt(hobbies.length - 1)]
