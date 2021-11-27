@@ -53,8 +53,11 @@ export default function createServer() {
     delete: (path, handler) => {
       routes.push({ method: 'DELETE', regex: pathToRegex(path), handler })
     },
-    listen: (...args) => {
+    instance() {
+      return server
+    },
+    listen: (...args) => (
       server.listen(...args)
-    }
+    )
   }
 }
