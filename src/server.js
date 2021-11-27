@@ -1,9 +1,26 @@
-import { createServer } from 'http'
-import persons from './data/persons'
+import createServer from './modules/server'
+import * as person from './repositories/person'
 
-const server = createServer((request, response) => {
-  response.setHeader('Content-Type', 'application/json')
-  response.end(JSON.stringify(persons))
+const server = createServer()
+
+server.get('/person', (_, response) => {
+  response.send(person.all())
+})
+
+server.get('/person/:id', (request, response) => {
+  response.send(person.findById(request.params.id))
+})
+
+server.post('/person', (request, response) => {
+  response.send(person.create(request.body))
+})
+
+server.put('/person/:id', (request, response) => {
+  response.send(person.update(request.params.id, request.body))
+})
+
+server.delete('/person/:id', (request, response) => {
+  response.send(person.remove(request.params.id))
 })
 
 export default server
