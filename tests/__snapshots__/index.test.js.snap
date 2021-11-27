@@ -27,3 +27,18 @@ Array [
   },
 ]
 `;
+
+exports[`Routes GET /person/:id Return 404 error when no matching person 1`] = `
+Object {
+  "message": "Person not found",
+}
+`;
+
+exports[`Routes GET /person/:id Return person with matching id 1`] = `
+Object {
+  "age": 6,
+  "hobbies": Array [],
+  "id": "75bae368-133e-4896-9655-19ddf027ad14",
+  "name": "Sam",
+}
+`;

@@ -25,6 +25,7 @@ const mockedPersons = [
 ]
 
 const mockedRandomUUID = jest.fn(() => crypto.randomUUID())
+const sampleUUID = 'a59ef8b2-a97d-4b17-b31d-2d56fe9d2320'
 
 jest.unstable_mockModule('crypto', () => ({
   default: {
@@ -45,6 +46,24 @@ describe('Routes', () => {
       const response = await request(server.instance()).get('/person')
 
       expect(response.status).toBe(200)
+      expect(response.type).toBe('application/json')
+      expect(response.body).toMatchSnapshot()
+    })
+  })
+
+  describe('GET /person/:id', () => {
+    test('Return person with matching id', async () => {
+      const response = await request(server.instance()).get(`/person/${mockedPersons[1].id}`)
+
+      expect(response.status).toBe(200)
+      expect(response.type).toBe('application/json')
+      expect(response.body).toMatchSnapshot()
+    })
+
+    test('Return 404 error when no matching person', async () => {
+      const response = await request(server.instance()).get(`/person/${sampleUUID}`)
+
+      expect(response.status).toBe(404)
       expect(response.type).toBe('application/json')
       expect(response.body).toMatchSnapshot()
     })
