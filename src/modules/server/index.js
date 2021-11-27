@@ -1,5 +1,6 @@
 import http, { STATUS_CODES } from 'http'
 import parseBody from '../body-parser'
+import { ClientError, NotFoundError } from '../errors'
 import pathToRegex from '../path-to-regex'
 
 export default function createServer() {
@@ -26,8 +27,16 @@ export default function createServer() {
         response.end(JSON.stringify({ message: STATUS_CODES[response.statusCode] }))
       }
     } catch (error) {
-      response.statusCode = 500
-      response.end(JSON.stringify({ message: STATUS_CODES[response.statusCode] }))
+      if (error instanceof ClientError) {
+        response.statusCode = error.status
+        response.end(JSON.stringify({ message: error.message }))
+      } else if (error instanceof NotFoundError) {
+        response.statusCode = 404
+        response.end(JSON.stringify({ message: error.message }))
+      } else {
+        response.statusCode = 500
+        response.end(JSON.stringify({ message: STATUS_CODES[response.statusCode] }))
+      }
     }
   })
 
