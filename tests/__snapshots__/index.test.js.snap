@@ -42,3 +42,50 @@ Object {
   "name": "Sam",
 }
 `;
+
+exports[`Routes POST /person Create and return created person 1`] = `
+Object {
+  "age": 25,
+  "hobbies": Array [
+    "console gaming",
+  ],
+  "id": "a59ef8b2-a97d-4b17-b31d-2d56fe9d2320",
+  "name": "Bob",
+}
+`;
+
+exports[`Routes POST /person Create and return created person 2`] = `
+Array [
+  Object {
+    "age": 18,
+    "hobbies": Array [
+      "tennis",
+    ],
+    "id": "02d2de0d-28f6-4d9a-b2cd-d9725b8d16c1",
+    "name": "Alex",
+  },
+  Object {
+    "age": 6,
+    "hobbies": Array [],
+    "id": "75bae368-133e-4896-9655-19ddf027ad14",
+    "name": "Sam",
+  },
+  Object {
+    "age": 41,
+    "hobbies": Array [
+      "dancing",
+      "hiking",
+    ],
+    "id": "b73a288b-7a09-4fa6-b988-2b14235e1e95",
+    "name": "Susan",
+  },
+  Object {
+    "age": 25,
+    "hobbies": Array [
+      "console gaming",
+    ],
+    "id": "a59ef8b2-a97d-4b17-b31d-2d56fe9d2320",
+    "name": "Bob",
+  },
+]
+`;

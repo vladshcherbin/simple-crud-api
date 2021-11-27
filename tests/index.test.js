@@ -68,4 +68,22 @@ describe('Routes', () => {
       expect(response.body).toMatchSnapshot()
     })
   })
+
+  describe('POST /person', () => {
+    test('Create and return created person', async () => {
+      mockedRandomUUID.mockReturnValueOnce(sampleUUID)
+
+      const createPersonRequest = await request(server.instance()).post('/person').send({
+        name: 'Bob',
+        age: 25,
+        hobbies: ['console gaming']
+      })
+      const personRequest = await request(server.instance()).get('/person')
+
+      expect(createPersonRequest.status).toBe(200)
+      expect(createPersonRequest.type).toBe('application/json')
+      expect(createPersonRequest.body).toMatchSnapshot()
+      expect(personRequest.body).toMatchSnapshot()
+    })
+  })
 })
