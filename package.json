@@ -2,9 +2,9 @@
   "name": "simple-crud-api",
   "scripts": {
     "build": "webpack",
-    "dev": "nodemon -w src",
     "lint": "eslint src tests",
     "start": "node --experimental-specifier-resolution node -r dotenv/config src",
+    "start:dev": "nodemon -w src",
     "start:prod": "yarn build && node --experimental-specifier-resolution node -r dotenv/config dist/server",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
     "test:coverage": "yarn test --coverage"
