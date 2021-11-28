@@ -6,7 +6,7 @@ To run the project, follow the steps below.
 
 First, install dependencies:
 
-```bash
+```console
 # yarn
 yarn
 
@@ -26,7 +26,7 @@ PORT = 3000
 
 Start production server:
 
-```bash
+```console
 # yarn
 yarn start:prod
 
@@ -38,7 +38,7 @@ After this steps the server should be running and you can check the API implemen
 
 To run tests:
 
-```bash
+```console
 # yarn
 yarn test
 
