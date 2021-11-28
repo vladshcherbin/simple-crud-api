@@ -15,7 +15,10 @@ server.get('/person/:id', (request, response) => {
 })
 
 server.post('/person', (request, response) => {
-  response.send(person.create(request.body))
+  const createdPerson = person.create(request.body)
+
+  response.statusCode = 201
+  response.send(createdPerson)
 })
 
 server.put('/person/:id', (request, response) => {

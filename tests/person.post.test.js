@@ -47,7 +47,7 @@ describe('POST /person', () => {
     })
     const personRequest = await request(server.instance()).get('/person')
 
-    expect(createPersonRequest.status).toBe(200)
+    expect(createPersonRequest.status).toBe(201)
     expect(createPersonRequest.type).toBe('application/json')
     expect(createPersonRequest.body).toMatchSnapshot()
     expect(personRequest.body).toMatchSnapshot()
