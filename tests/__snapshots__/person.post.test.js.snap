@@ -46,3 +46,13 @@ Array [
   },
 ]
 `;
+
+exports[`POST /person Return 400 error when request data is invalid 1`] = `
+Object {
+  "errors": Object {
+    "hobbies": "\\"hobbies\\" value is missing",
+    "name": "\\"name\\" value is missing",
+  },
+  "message": "Validation error",
+}
+`;

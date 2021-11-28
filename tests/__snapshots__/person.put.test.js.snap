@@ -6,6 +6,16 @@ Object {
 }
 `;
 
+exports[`PUT /person/:id Return 400 error when request data is invalid 1`] = `
+Object {
+  "errors": Object {
+    "age": "\\"age\\" value is missing",
+    "hobbies": "\\"hobbies\\" values must be strings",
+  },
+  "message": "Validation error",
+}
+`;
+
 exports[`PUT /person/:id Return 404 error when no matching person 1`] = `
 Object {
   "message": "Person not found",

@@ -2,6 +2,7 @@ import http, { STATUS_CODES } from 'http'
 import parseBody from '../body-parser'
 import { ClientError, NotFoundError } from '../errors'
 import pathToRegex from '../path-to-regex'
+import { ValidationError } from '../validation'
 
 export default function createServer() {
   const routes = []
@@ -30,6 +31,9 @@ export default function createServer() {
       if (error instanceof ClientError) {
         response.statusCode = error.status
         response.end(JSON.stringify({ message: error.message }))
+      } else if (error instanceof ValidationError) {
+        response.statusCode = error.status
+        response.end(JSON.stringify({ message: error.message, errors: error.errors }))
       } else if (error instanceof NotFoundError) {
         response.statusCode = 404
         response.end(JSON.stringify({ message: error.message }))

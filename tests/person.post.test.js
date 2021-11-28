@@ -52,4 +52,15 @@ describe('POST /person', () => {
     expect(createPersonRequest.body).toMatchSnapshot()
     expect(personRequest.body).toMatchSnapshot()
   })
+
+  test('Return 400 error when request data is invalid', async () => {
+    const response = await request(server.instance()).post('/person').send({
+      name: '',
+      age: 25
+    })
+
+    expect(response.status).toBe(400)
+    expect(response.type).toBe('application/json')
+    expect(response.body).toMatchSnapshot()
+  })
 })

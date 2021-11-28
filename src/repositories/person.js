@@ -1,6 +1,7 @@
 import crypto from 'crypto'
 import persons from '../data/persons'
 import { NotFoundError } from '../modules/errors'
+import { validatePerson } from '../modules/validation'
 
 export function all() {
   return persons
@@ -17,9 +18,10 @@ export function findById(id) {
 }
 
 export function create(data) {
+  const validData = validatePerson(data)
   const person = {
     id: crypto.randomUUID(),
-    ...data
+    ...validData
   }
 
   persons.push(person)
@@ -34,8 +36,9 @@ export function update(id, data) {
     throw new NotFoundError('Person not found')
   }
 
+  const validData = validatePerson(data)
   const foundPersonIndex = persons.findIndex((person) => person.id === id)
-  const updatedPerson = { ...foundPerson, ...data }
+  const updatedPerson = { ...foundPerson, ...validData }
 
   persons.fill(updatedPerson, foundPersonIndex, foundPersonIndex + 1)
 
