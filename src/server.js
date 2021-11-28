@@ -30,10 +30,10 @@ server.put('/person/:id', (request, response) => {
 server.delete('/person/:id', (request, response) => {
   checkUUID(request.params.id)
 
-  const removedPerson = person.remove(request.params.id)
+  person.remove(request.params.id)
 
   response.statusCode = 204
-  response.send(removedPerson)
+  response.end()
 })
 
 server.get('/missing-handler')
