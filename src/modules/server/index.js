@@ -31,12 +31,12 @@ export default function createServer() {
       if (error instanceof ClientError) {
         response.statusCode = error.status
         response.end(JSON.stringify({ message: error.message }))
-      } else if (error instanceof ValidationError) {
-        response.statusCode = error.status
-        response.end(JSON.stringify({ message: error.message, errors: error.errors }))
       } else if (error instanceof NotFoundError) {
         response.statusCode = 404
         response.end(JSON.stringify({ message: error.message }))
+      } else if (error instanceof ValidationError) {
+        response.statusCode = error.status
+        response.end(JSON.stringify({ message: error.message, errors: error.errors }))
       } else {
         response.statusCode = 500
         response.end(JSON.stringify({ message: STATUS_CODES[response.statusCode] }))
