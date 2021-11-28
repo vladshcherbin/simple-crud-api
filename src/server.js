@@ -36,4 +36,6 @@ server.delete('/person/:id', (request, response) => {
   response.send(removedPerson)
 })
 
+server.get('/missing-handler')
+
 export default server
