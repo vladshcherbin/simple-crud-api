@@ -3,7 +3,6 @@ class ValidationError extends Error {
     super(...parameters)
 
     this.name = 'ValidationError'
-    this.status = 400
     this.message = 'Validation error'
     this.errors = errors
   }

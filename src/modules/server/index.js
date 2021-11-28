@@ -35,7 +35,7 @@ export default function createServer() {
         response.statusCode = 404
         response.end(JSON.stringify({ message: error.message }))
       } else if (error instanceof ValidationError) {
-        response.statusCode = error.status
+        response.statusCode = 400
         response.end(JSON.stringify({ message: error.message, errors: error.errors }))
       } else {
         response.statusCode = 500
