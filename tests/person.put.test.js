@@ -32,17 +32,17 @@ const { default: server } = await import('../src/server')
 
 describe('PUT /person/:id', () => {
   test('Update and return updated person', async () => {
-    const updatePersonRequest = await request(server.instance()).put(`/person/${samplePersons[1].id}`).send({
+    const updatePersonResponse = await request(server.instance()).put(`/person/${samplePersons[1].id}`).send({
       name: 'Jerax',
       age: 25,
       hobbies: ['singing']
     })
-    const personRequest = await request(server.instance()).get('/person')
+    const personResponse = await request(server.instance()).get('/person')
 
-    expect(updatePersonRequest.status).toBe(200)
-    expect(updatePersonRequest.type).toBe('application/json')
-    expect(updatePersonRequest.body).toMatchSnapshot()
-    expect(personRequest.body).toMatchSnapshot()
+    expect(updatePersonResponse.status).toBe(200)
+    expect(updatePersonResponse.type).toBe('application/json')
+    expect(updatePersonResponse.body).toMatchSnapshot()
+    expect(personResponse.body).toMatchSnapshot()
   })
 
   test('Return 400 error when request data is invalid', async () => {

@@ -40,17 +40,17 @@ describe('POST /person', () => {
   test('Create and return created person', async () => {
     mockedRandomUUID.mockReturnValueOnce(sampleUUID)
 
-    const createPersonRequest = await request(server.instance()).post('/person').send({
+    const createPersonResponse = await request(server.instance()).post('/person').send({
       name: 'Bob',
       age: 25,
       hobbies: ['console gaming']
     })
-    const personRequest = await request(server.instance()).get('/person')
+    const personResponse = await request(server.instance()).get('/person')
 
-    expect(createPersonRequest.status).toBe(201)
-    expect(createPersonRequest.type).toBe('application/json')
-    expect(createPersonRequest.body).toMatchSnapshot()
-    expect(personRequest.body).toMatchSnapshot()
+    expect(createPersonResponse.status).toBe(201)
+    expect(createPersonResponse.type).toBe('application/json')
+    expect(createPersonResponse.body).toMatchSnapshot()
+    expect(personResponse.body).toMatchSnapshot()
   })
 
   test('Return 400 error when request data is invalid', async () => {
