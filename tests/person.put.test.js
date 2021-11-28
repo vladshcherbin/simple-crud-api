@@ -45,6 +45,18 @@ describe('PUT /person/:id', () => {
     expect(personRequest.body).toMatchSnapshot()
   })
 
+  test('Return 400 error when id is invalid', async () => {
+    const response = await request(server.instance()).put('/person/invalid-id').send({
+      name: 'Jerax',
+      age: 25,
+      hobbies: ['singing']
+    })
+
+    expect(response.status).toBe(400)
+    expect(response.type).toBe('application/json')
+    expect(response.body).toMatchSnapshot()
+  })
+
   test('Return 404 error when no matching person', async () => {
     const response = await request(server.instance()).put(`/person/${sampleUUID}`).send({
       name: 'Jerax',

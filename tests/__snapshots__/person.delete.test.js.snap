@@ -24,6 +24,12 @@ Array [
 ]
 `;
 
+exports[`DELETE /person/:id Return 400 error when id is invalid 1`] = `
+Object {
+  "message": "Invalid id value format",
+}
+`;
+
 exports[`DELETE /person/:id Return 404 error when no matching person 1`] = `
 Object {
   "message": "Person not found",
