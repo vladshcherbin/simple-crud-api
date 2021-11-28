@@ -16,7 +16,7 @@ jest.unstable_mockModule('../../src/data/persons', () => ({
 
 const { default: server } = await import('../../src/server')
 
-describe.only('Scenario one', () => {
+describe('Scenario one', () => {
   test('Return empty person list', async () => {
     const response = await request(server.instance()).get('/person')
 
