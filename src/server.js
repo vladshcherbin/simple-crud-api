@@ -20,7 +20,10 @@ server.put('/person/:id', (request, response) => {
 })
 
 server.delete('/person/:id', (request, response) => {
-  response.send(person.remove(request.params.id))
+  const removedPerson = person.remove(request.params.id)
+
+  response.statusCode = 204
+  response.send(removedPerson)
 })
 
 export default server

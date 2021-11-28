@@ -51,7 +51,7 @@ export function remove(id) {
 
   const foundPersonIndex = persons.findIndex((person) => person.id === id)
 
-  persons.splice(foundPersonIndex, foundPersonIndex + 1)
+  persons.splice(foundPersonIndex, 1)
 
   return foundPerson
 }
