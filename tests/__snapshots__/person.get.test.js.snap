@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`GET /person Return persons list 1`] = `
+Array [
+  Object {
+    "age": 18,
+    "hobbies": Array [
+      "tennis",
+    ],
+    "id": "02d2de0d-28f6-4d9a-b2cd-d9725b8d16c1",
+    "name": "Alex",
+  },
+  Object {
+    "age": 6,
+    "hobbies": Array [],
+    "id": "75bae368-133e-4896-9655-19ddf027ad14",
+    "name": "Sam",
+  },
+  Object {
+    "age": 41,
+    "hobbies": Array [
+      "dancing",
+      "hiking",
+    ],
+    "id": "b73a288b-7a09-4fa6-b988-2b14235e1e95",
+    "name": "Susan",
+  },
+]
+`;
+
+exports[`GET /person/:id Return 400 error when id is invalid 1`] = `
+Object {
+  "message": "Invalid id value format",
+}
+`;
+
+exports[`GET /person/:id Return 404 error when no matching person 1`] = `
+Object {
+  "message": "Person not found",
+}
+`;
+
+exports[`GET /person/:id Return person with matching id 1`] = `
+Object {
+  "age": 6,
+  "hobbies": Array [],
+  "id": "75bae368-133e-4896-9655-19ddf027ad14",
+  "name": "Sam",
+}
+`;

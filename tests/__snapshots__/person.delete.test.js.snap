@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DELETE /person/:id Delete person 1`] = `""`;
+
+exports[`DELETE /person/:id Delete person 2`] = `
+Array [
+  Object {
+    "age": 18,
+    "hobbies": Array [
+      "tennis",
+    ],
+    "id": "02d2de0d-28f6-4d9a-b2cd-d9725b8d16c1",
+    "name": "Alex",
+  },
+  Object {
+    "age": 41,
+    "hobbies": Array [
+      "dancing",
+      "hiking",
+    ],
+    "id": "b73a288b-7a09-4fa6-b988-2b14235e1e95",
+    "name": "Susan",
+  },
+]
+`;
+
+exports[`DELETE /person/:id Return 400 error when id is invalid 1`] = `
+Object {
+  "message": "Invalid id value format",
+}
+`;
+
+exports[`DELETE /person/:id Return 404 error when no matching person 1`] = `
+Object {
+  "message": "Person not found",
+}
+`;

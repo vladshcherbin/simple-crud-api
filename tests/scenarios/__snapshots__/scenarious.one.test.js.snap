@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Scenario one Create and return created person 1`] = `
+Object {
+  "age": 25,
+  "hobbies": Array [
+    "hiking",
+  ],
+  "id": "a59ef8b2-a97d-4b17-b31d-2d56fe9d2320",
+  "name": "Bob",
+}
+`;
+
+exports[`Scenario one Delete created person 1`] = `""`;
+
+exports[`Scenario one Return 404 error for deleted person 1`] = `
+Object {
+  "message": "Person not found",
+}
+`;
+
+exports[`Scenario one Return created person by id 1`] = `
+Object {
+  "age": 25,
+  "hobbies": Array [
+    "hiking",
+  ],
+  "id": "a59ef8b2-a97d-4b17-b31d-2d56fe9d2320",
+  "name": "Bob",
+}
+`;
+
+exports[`Scenario one Return empty person list 1`] = `Array []`;
+
+exports[`Scenario one Update created person and return updated person 1`] = `
+Object {
+  "age": 25,
+  "hobbies": Array [
+    "singing",
+  ],
+  "id": "a59ef8b2-a97d-4b17-b31d-2d56fe9d2320",
+  "name": "Sam",
+}
+`;

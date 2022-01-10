@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Scenario two Delete second person 1`] = `""`;
+
+exports[`Scenario two Return 400 trying to update first person with invalid data 1`] = `
+Object {
+  "errors": Object {
+    "hobbies": "\\"hobbies\\" value is missing",
+    "name": "\\"name\\" value is missing",
+  },
+  "message": "Validation error",
+}
+`;
+
+exports[`Scenario two Return 404 error for deleted person 1`] = `
+Object {
+  "message": "Person not found",
+}
+`;
+
+exports[`Scenario two Return person list with 2 persons 1`] = `
+Array [
+  Object {
+    "age": 19,
+    "hobbies": Array [
+      "tennis",
+    ],
+    "id": "02d2de0d-28f6-4d9a-b2cd-d9725b8d16c1",
+    "name": "Alex",
+  },
+  Object {
+    "age": 41,
+    "hobbies": Array [
+      "dancing",
+      "hiking",
+    ],
+    "id": "b73a288b-7a09-4fa6-b988-2b14235e1e95",
+    "name": "Susan",
+  },
+]
+`;
+
+exports[`Scenario two Return person list with 3 persons 1`] = `
+Array [
+  Object {
+    "age": 18,
+    "hobbies": Array [
+      "tennis",
+    ],
+    "id": "02d2de0d-28f6-4d9a-b2cd-d9725b8d16c1",
+    "name": "Alex",
+  },
+  Object {
+    "age": 6,
+    "hobbies": Array [],
+    "id": "75bae368-133e-4896-9655-19ddf027ad14",
+    "name": "Sam",
+  },
+  Object {
+    "age": 41,
+    "hobbies": Array [
+      "dancing",
+      "hiking",
+    ],
+    "id": "b73a288b-7a09-4fa6-b988-2b14235e1e95",
+    "name": "Susan",
+  },
+]
+`;
+
+exports[`Scenario two Update first person with valid data 1`] = `
+Object {
+  "age": 19,
+  "hobbies": Array [
+    "tennis",
+  ],
+  "id": "02d2de0d-28f6-4d9a-b2cd-d9725b8d16c1",
+  "name": "Alex",
+}
+`;

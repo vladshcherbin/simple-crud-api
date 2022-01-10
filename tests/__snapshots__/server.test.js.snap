@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Return 400 request body is invalid 1`] = `
+Object {
+  "message": "Bad Request",
+}
+`;
+
+exports[`Return 404 when no matching endpoint 1`] = `
+Object {
+  "message": "Not Found",
+}
+`;
+
+exports[`Return 500 when route handler is missing 1`] = `
+Object {
+  "message": "Internal Server Error",
+}
+`;
